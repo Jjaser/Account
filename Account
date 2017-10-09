@@ -1,0 +1,43 @@
+
+public class Account 
+{
+	private String name;
+	private double yue;
+	public Account(String name)
+	{
+		this.name=name;
+		this.yue=0;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public double yue()
+	{
+		return yue;
+	}
+	public boolean put(double value)
+	{
+		if (value>0)
+		{
+			this.yue+=value;
+			return true;
+		}
+		return false;
+	}
+	public double get(double value)
+	{
+		if (value>0)
+		{
+			if (value<=this.yue)
+				this.yue -= value;
+			else
+			{
+				value = this.yue;
+				this.yue = 0;
+			}
+			return value;
+		}
+		return 0;
+	}
+}
